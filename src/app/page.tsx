@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { industries, howItWorksSteps, whyWEBzPoints } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { AnnouncementBanner } from "@/components/announcement-banner";
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
@@ -47,6 +48,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Announcement Section */}
+      <AnnouncementBanner />
       
       {/* Why WEBz Section */}
       <section className="py-16 md:py-24 bg-background/95">
@@ -82,7 +86,7 @@ export default function Home() {
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-6">
             {industries.map((industry) => (
-              <Card key={industry.title} className="group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <Card key={industry.title} className="group w-full sm:w-auto md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex-grow md:flex-grow-0">
                 <CardContent className="p-6 text-center">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                     <industry.icon className="h-8 w-8" />

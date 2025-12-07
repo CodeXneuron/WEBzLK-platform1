@@ -16,17 +16,17 @@ export const metadata: Metadata = {
 const socialLinks = [
   {
     name: "LinkedIn",
-    href: "#", // Add LinkedIn URL here
+    href: "https://www.linkedin.com/in/kosala-nayanajith-deshapriya-a4065a248",
     icon: Linkedin,
   },
   {
     name: "GitHub",
-    href: "#", // Add GitHub URL here
+    href: "https://github.com/CodeXneuron",
     icon: Github,
   },
   {
     name: "Medium",
-    href: "#", // Add Medium URL here
+    href: "https://medium.com/@deshapriyakosala",
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg
         {...props}

@@ -4,11 +4,50 @@ import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { companyValues } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Linkedin, Github } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "About Us",
   description: "Learn about WEBz's mission to develop Sri Lanka through AI and engineering, our founder's story, and our core values.",
 };
+
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "#", // Add LinkedIn URL here
+    icon: Linkedin,
+  },
+  {
+    name: "GitHub",
+    href: "#", // Add GitHub URL here
+    icon: Github,
+  },
+  {
+    name: "Medium",
+    href: "#", // Add Medium URL here
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
+      <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5.5 4h13A3.5 3.5 0 0 1 22 7.5v9a3.5 3.5 0 0 1-3.5 3.5h-13A3.5 3.5 0 0 1 2 16.5v-9A3.5 3.5 0 0 1 5.5 4z"></path>
+        <path d="M8 8v8"></path>
+        <path d="M12.5 8v8"></path>
+        <path d="M17 8v8"></path>
+      </svg>
+    ),
+  },
+];
 
 export default function AboutPage() {
   const founderImage = PlaceHolderImages.find((img) => img.id === 'founder-deshapriya');
@@ -67,6 +106,16 @@ export default function AboutPage() {
               <p className="mt-4 text-muted-foreground">
                 He started WEBz to bridge that gap, combining rigorous engineering discipline with the innovative power of machine learning. His goal is to build a company that is not just profitable, but pivotal in Sri Lanka's journey towards becoming a technology-driven nation.
               </p>
+              <div className="mt-6 flex items-center gap-4">
+                {socialLinks.map((social) => (
+                  <Button key={social.name} asChild variant="outline" size="icon">
+                    <Link href={social.href} target="_blank" rel="noopener noreferrer">
+                      <social.icon className="h-5 w-5" />
+                      <span className="sr-only">{social.name}</span>
+                    </Link>
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
         </section>

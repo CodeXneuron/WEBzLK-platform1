@@ -26,7 +26,7 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         <div className="absolute inset-0 bg-primary/40" />
-        <div className="relative z-10 flex h-full items-end justify-center pb-12 text-center text-primary-foreground md:pb-24">
+        <div className="relative z-10 flex h-full items-center justify-center text-center text-primary-foreground md:items-end md:pb-24">
           <div className="container mx-auto px-4">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl text-balance">
               Engineering AI Solutions for a Smarter Sri Lanka
@@ -109,7 +109,10 @@ export default function Home() {
             <div className="absolute left-1/2 top-4 hidden h-full w-px -translate-x-1/2 bg-border md:block" />
             <div className="grid gap-12 md:grid-cols-1">
               {howItWorksSteps.map((step, index) => (
-                <div key={step.step} className={cn("relative flex items-center gap-6", index % 2 === 1 && "md:flex-row-reverse")}>
+                <div key={step.step} className={cn("relative flex flex-col md:flex-row items-center gap-6", index % 2 === 1 && "md:flex-row-reverse")}>
+                   <div className="flex md:hidden h-12 w-12 items-center justify-center rounded-full bg-card shadow-md">
+                    <step.icon className="h-6 w-6 text-primary" />
+                  </div>
                   <div className="hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-card shadow-md">
                     <step.icon className="h-6 w-6 text-primary" />
                   </div>

@@ -49,7 +49,7 @@ export default function Home() {
       </section>
       
       {/* Why WEBz Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background/95">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">Why WEBz?</h2>
@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* Key Industries Section */}
-      <section className="py-16 md:py-24 bg-card">
+      <section className="py-16 md:py-24 bg-card/95">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">Powering Key Industries in Sri Lanka</h2>
@@ -80,7 +80,7 @@ export default function Home() {
               We deliver tailored AI and engineering solutions that address the unique challenges of each sector.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-12 grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {industries.map((industry) => (
               <Card key={industry.title} className="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 <CardContent className="p-6 text-center">
@@ -97,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background/95">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">Our Collaborative Process</h2>

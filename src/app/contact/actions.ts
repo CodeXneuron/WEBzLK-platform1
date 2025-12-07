@@ -2,10 +2,9 @@
 
 import { contactFormSchema, type ContactFormState } from "./schema";
 import { intelligentInquiryRouting } from '@/ai/flows/intelligent-inquiry-routing';
-// Note: To enable Firestore integration, you would uncomment the following lines
-// and configure your Firebase project in a file like 'src/lib/firebase.ts'.
-// import { db } from '@/lib/firebase';
-// import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { initializeFirebase } from '@/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { getFirestore } from "firebase/firestore";
 
 export async function submitInquiry(
   prevState: ContactFormState,
@@ -20,7 +19,6 @@ export async function submitInquiry(
   });
 
   if (!validatedFields.success) {
-    // This is a server-side check. Client-side validation should prevent this.
     return {
       message: 'Invalid form data. Please check your entries.',
       status: 'error',
@@ -31,24 +29,23 @@ export async function submitInquiry(
 
   try {
     const routingResult = await intelligentInquiryRouting(inquiryData);
-
-    // --- Firestore Integration Placeholder ---
-    // Here you would save the inquiry and the AI's routing decision to Firestore.
-    // This provides a structured backend for administrators to view and manage requests.
-    //
-    // try {
-    //   await addDoc(collection(db, 'inquiries'), {
-    //     ...inquiryData,
-    //     routedTo: routingResult.team,
-    //     routingReason: routingResult.reason,
-    //     submittedAt: serverTimestamp(),
-    //     status: 'New',
-    //   });
-    // } catch (firestoreError) {
-    //   console.error("Failed to write to Firestore:", firestoreError);
-    //   // Optionally, you could decide if this is a critical failure.
-    //   // For now, we proceed even if Firestore write fails.
-    // }
+    
+    try {
+      const { firestore } = initializeFirebase();
+      if (!firestore) {
+          throw new Error('Firestore is not initialized');
+      }
+      const db = getFirestore(firestore);
+      await addDoc(collection(db, 'inquiries'), {
+        ...inquiryData,
+        routedTo: routingResult.team,
+        routingReason: routingResult.reason,
+        submittedAt: serverTimestamp(),
+        status: 'New',
+      });
+    } catch (firestoreError) {
+      console.error("Failed to write to Firestore:", firestoreError);
+    }
     
     console.log('AI Routing Result:', routingResult);
 

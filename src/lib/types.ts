@@ -50,3 +50,15 @@ export interface Project {
     hint: string;
   };
 }
+
+export interface Post {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  author: string;
+  content: string;
+  ogImage?: {
+    url: string;
+  };
+}

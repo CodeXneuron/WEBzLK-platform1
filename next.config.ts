@@ -45,6 +45,12 @@ const nextConfig: NextConfig = {
         hostname: 't4.ftcdn.net',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

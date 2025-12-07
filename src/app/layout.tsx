@@ -72,7 +72,7 @@ export default function RootLayout({
         <title>WEBz Solutions | AI & Engineering for a Smarter Sri Lanka</title>
         <meta name="description" content="WEBz offers AI, machine learning, and custom software solutions to solve real-world engineering problems in Sri Lanka, focusing on key industries like construction, agriculture, and manufacturing." />
         <meta name="keywords" content="AI in Sri Lanka, Software Engineering Sri Lanka, Machine Learning, Custom Software, Tech in Sri Lanka" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://i.ibb.co/PGRr8ktt/logo-yakawebz-trans.png" />
       </head>
       <body className={cn("min-h-screen bg-background font-body antialiased", fontBody.variable, fontHeadline.variable)}>
         <FirebaseProvider>

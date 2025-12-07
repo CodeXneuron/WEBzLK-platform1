@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'media.licdn.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent.fcmb8-1.fna.fbcdn.net',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

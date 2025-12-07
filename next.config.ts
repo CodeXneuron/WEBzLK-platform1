@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         hostname: 'scontent.fcmb8-1.fna.fbcdn.net',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 't4.ftcdn.net',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

@@ -80,9 +80,9 @@ export default function Home() {
               We deliver tailored AI and engineering solutions that address the unique challenges of each sector.
             </p>
           </div>
-          <div className="mt-12 grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
             {industries.map((industry) => (
-              <Card key={industry.title} className="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <Card key={industry.title} className="group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 <CardContent className="p-6 text-center">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                     <industry.icon className="h-8 w-8" />

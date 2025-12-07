@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract technology background",
+      "imageUrl": "https://images.unsplash.com/photo-1562575214-da9fcf59b907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY1MDQ4OTU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology abstract"
+    },
+    {
+      "id": "founder-deshapriya",
+      "description": "Portrait of Deshapriya D.M.K.N, founder of WEBz",
+      "imageUrl": "https://images.unsplash.com/photo-1715412507413-c7416b47cacb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY1MDUxNjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "male portrait"
+    },
+    {
+      "id": "project-smart-irrigation",
+      "description": "A smart irrigation system in a Sri Lankan farm",
+      "imageUrl": "https://images.unsplash.com/photo-1535379453347-1ffd615e2e08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YWdyaWN1bHR1cmUlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc2NTA5MDMyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "agriculture technology"
+    },
+    {
+      "id": "project-construction-analytics",
+      "description": "A construction site with analytics overlay",
+      "imageUrl": "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDB8fHx8MTc2NTA1NDEyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "construction site"
+    },
+    {
+      "id": "project-factory-automation",
+      "description": "An automated factory production line",
+      "imageUrl": "https://images.unsplash.com/photo-1717386255785-59c670564341?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYWN0b3J5JTIwYXV0b21hdGlvbnxlbnwwfHx8fDE3NjUwOTAzMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "factory automation"
+    },
+    {
+      "id": "project-education-platform",
+      "description": "Students using a digital education platform",
+      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwZWR1Y2F0aW9ufGVufDB8fHx8MTc2NDk3NzEzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital education"
+    }
+  ]
 }

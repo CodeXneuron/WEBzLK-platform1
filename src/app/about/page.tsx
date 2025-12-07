@@ -85,7 +85,7 @@ export default function AboutPage() {
         {/* Founder Section */}
         <section id="founder" className="mt-24 rounded-lg bg-card p-8 md:p-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 flex justify-center">
               {founderImage && (
                 <Image
                   src={founderImage.imageUrl}
@@ -93,7 +93,7 @@ export default function AboutPage() {
                   data-ai-hint={founderImage.imageHint}
                   width={400}
                   height={400}
-                  className="rounded-full object-cover aspect-square"
+                  className="rounded-full object-cover aspect-square max-w-[250px] md:max-w-full"
                 />
               )}
             </div>

@@ -86,7 +86,7 @@ export default function Home() {
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-6">
             {industries.map((industry) => (
-              <Card key={industry.title} className="group w-full sm:w-auto md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(20%-1.5rem)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex-grow md:flex-grow-0">
+              <Card key={industry.title} className="group w-full sm:w-[calc(50%-0.75rem)] md:w-[calc(33.33%-1rem)] lg:w-[calc(20%-1.2rem)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex-grow md:flex-grow-0">
                 <CardContent className="p-6 text-center">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                     <industry.icon className="h-8 w-8" />
@@ -113,11 +113,8 @@ export default function Home() {
             <div className="absolute left-1/2 top-4 hidden h-full w-px -translate-x-1/2 bg-border md:block" />
             <div className="grid gap-12 md:grid-cols-1">
               {howItWorksSteps.map((step, index) => (
-                <div key={step.step} className={cn("relative flex flex-col md:flex-row items-center gap-6", index % 2 === 1 && "md:flex-row-reverse")}>
-                   <div className="flex md:hidden h-12 w-12 items-center justify-center rounded-full bg-card shadow-md">
-                    <step.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-card shadow-md">
+                <div key={step.step} className={cn("relative flex flex-col items-center md:flex-row md:items-stretch gap-6", index % 2 === 1 && "md:flex-row-reverse")}>
+                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card shadow-md">
                     <step.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div className="hidden md:block absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background" style={{ left: 'calc(50% - 8px)'}} />

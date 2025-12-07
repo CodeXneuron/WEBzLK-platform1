@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { contactFormSchema, submitInquiry } from "./actions";
+import { submitInquiry } from "./actions";
+import { contactFormSchema } from "./schema";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";

@@ -93,7 +93,7 @@ export default function AboutPage() {
                   data-ai-hint={founderImage.imageHint}
                   width={400}
                   height={400}
-                  className="rounded-lg object-cover aspect-square"
+                  className="rounded-full object-cover aspect-square"
                 />
               )}
             </div>

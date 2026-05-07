@@ -12,6 +12,20 @@ export interface Industry {
   description: string;
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  avatar?: string;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface WhyWEBzPoint {
   icon: LucideIcon;
   title: string;
@@ -49,6 +63,14 @@ export interface Project {
     url: string;
     hint: string;
   };
+}
+
+export interface Technology {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  features: string[];
+  accentColor: string;
 }
 
 export interface Post {

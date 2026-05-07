@@ -9,12 +9,13 @@ export const metadata: Metadata = {
 };
 
 const contactDetails = [
-  { icon: Mail, label: "Email", value: "hello@webz.lk", href: "mailto:hello@webz.lk" },
-  { icon: Phone, label: "Phone", value: "+94 77 123 4567", href: "tel:+94771234567" },
-  { icon: MapPin, label: "City", value: "Colombo, Sri Lanka", href: "#" },
+  { icon: Mail, label: "Email", value: "webzlkinfo@gmail.com", href: "mailto:webzlkinfo@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+94 70 257 3799", href: "tel:+94702573799" },
+  { icon: MapPin, label: "City", value: "Monaragala, Sri Lanka", href: "#" },
 ];
 
-export default function ContactPage({ searchParams }: { searchParams?: { service?: string } }) {
+export default async function ContactPage(props: { searchParams: Promise<{ service?: string }> }) {
+  const searchParams = await props.searchParams;
   return (
     <>
       <PageHeader

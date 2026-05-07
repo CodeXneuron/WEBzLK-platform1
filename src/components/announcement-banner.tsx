@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { PartyPopper, Rocket } from 'lucide-react';
+import Image from 'next/image';
 
 export function AnnouncementBanner() {
   const [timeLeft, setTimeLeft] = useState({
@@ -12,7 +13,7 @@ export function AnnouncementBanner() {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-02-01T00:00:00').getTime();
+    const targetDate = new Date('2026-08-15T00:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -56,44 +57,53 @@ export function AnnouncementBanner() {
           <span className="font-semibold text-primary">
             WEBz Solution Platform 1.0
           </span>
-          , is scheduled to launch in February 2026.
+          , is scheduled to launch in 100 days.
         </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-8">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-8">
           <div className="flex flex-col items-center">
-            <span className="font-headline text-4xl font-bold text-primary">
+            <span className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
               {timeLeft.days}
             </span>
-            <span className="text-sm font-medium text-muted-foreground">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
               Days
             </span>
           </div>
-          <div className="text-4xl font-light text-muted-foreground">:</div>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-light text-muted-foreground">:</div>
           <div className="flex flex-col items-center">
-            <span className="font-headline text-4xl font-bold text-primary">
+            <span className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
               {timeLeft.hours}
             </span>
-            <span className="text-sm font-medium text-muted-foreground">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
               Hours
             </span>
           </div>
-          <div className="text-4xl font-light text-muted-foreground">:</div>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-light text-muted-foreground">:</div>
           <div className="flex flex-col items-center">
-            <span className="font-headline text-4xl font-bold text-primary">
+            <span className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
               {timeLeft.minutes}
             </span>
-            <span className="text-sm font-medium text-muted-foreground">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
               Minutes
             </span>
           </div>
-          <div className="text-4xl font-light text-muted-foreground">:</div>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-light text-muted-foreground">:</div>
           <div className="flex flex-col items-center">
-            <span className="font-headline text-4xl font-bold text-primary">
+            <span className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
               {timeLeft.seconds}
             </span>
-            <span className="text-sm font-medium text-muted-foreground">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
               Seconds
             </span>
           </div>
+        </div>
+        <div className="mt-8 flex justify-center">
+          <Image
+            src="/coming-soon.png"
+            alt="Coming Soon"
+            width={500}
+            height={300}
+            className="mx-auto rounded-lg shadow-xl"
+          />
         </div>
       </div>
     </section>

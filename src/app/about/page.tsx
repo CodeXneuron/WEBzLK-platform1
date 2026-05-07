@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about WEBz's mission to develop Sri Lanka through AI and engineering, our founder's story, and our core values.",
+  description: "Learn about WEBz's mission to drive global innovation through AI and engineering, our founder's story, and our core values.",
 };
 
 const socialLinks = [
@@ -56,7 +56,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="About WEBz"
-        description="We are a team of engineers, developers, and visionaries dedicated to using technology to build a better, smarter Sri Lanka."
+        description="We are a team of engineers, developers, and visionaries dedicated to using technology to build a better, smarter world."
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -65,19 +65,19 @@ export default function AboutPage() {
           <div className="space-y-4">
             <h2 className="font-headline text-3xl font-bold tracking-tight">Our Story</h2>
             <p className="text-lg text-muted-foreground">
-              WEBz was founded on a simple yet powerful idea: that the advanced engineering and AI technologies shaping the world could be harnessed to solve the unique, practical problems faced by industries right here in Sri Lanka.
+              WEBz was founded on a simple yet powerful idea: that advanced engineering and AI technologies could be harnessed to solve practical problems faced by industries worldwide, starting from our roots in Sri Lanka.
             </p>
             <p className="text-muted-foreground">
-              Tired of seeing generic, one-size-fits-all software fail to meet local needs, our founder, Deshapriya D.M.K.N, envisioned a company that would get its hands dirty. A company that would work alongside construction managers, farmers, and factory owners to build tools that make a real difference. We don't just write code; we engineer solutions.
+              Recognizing that businesses everywhere face similar challenges, our founder, Deshapriya D.M.K.N, envisioned a company that would work alongside industry leaders globally—from construction managers to farmers and factory owners—to build tools that make a real difference. We don't just write code; we engineer solutions.
             </p>
           </div>
           <div className="space-y-4">
             <h2 className="font-headline text-3xl font-bold tracking-tight">Our Mission & Vision</h2>
             <p className="text-lg text-muted-foreground">
-              Our mission is to use AI, machine learning, and engineering software to solve real-world problems and help develop Sri Lanka together with our clients and local industries.
+              Our mission is to use AI, machine learning, and engineering software to solve real-world problems and help businesses worldwide achieve their full potential through intelligent technology.
             </p>
             <p className="text-muted-foreground">
-              We envision a Sri Lanka where technology is not just a consumer product, but a tool for creation and empowerment. A future where our industries are more efficient, our agriculture more sustainable, and our economy more resilient, all driven by locally-developed, intelligent technology.
+              We envision a world where technology is not just a consumer product, but a tool for creation and empowerment. A future where industries are more efficient, agriculture more sustainable, and economies more resilient, all driven by intelligent, purpose-built technology.
             </p>
           </div>
         </section>
@@ -101,10 +101,10 @@ export default function AboutPage() {
               <h2 className="font-headline text-3xl font-bold tracking-tight">Meet the Founder</h2>
               <h3 className="mt-2 text-xl font-semibold text-primary">Deshapriya D.M.K.N</h3>
               <p className="mt-4 text-muted-foreground">
-                Deshapriya is an engineer and software architect with a passion for applying technology to practical challenges. With a background in civil engineering and over a decade of experience in the software industry, he witnessed firsthand the gap between the theoretical potential of AI and its on-the-ground application in Sri Lanka.
+                Deshapriya is an engineer and software architect with a passion for applying technology to practical challenges. With a background in civil engineering and over a decade of experience in the software industry, he witnessed firsthand the gap between the theoretical potential of AI and its real-world application.
               </p>
               <p className="mt-4 text-muted-foreground">
-                He started WEBz to bridge that gap, combining rigorous engineering discipline with the innovative power of machine learning. His goal is to build a company that is not just profitable, but pivotal in Sri Lanka's journey towards becoming a technology-driven nation.
+                He started WEBz to bridge that gap, combining rigorous engineering discipline with the innovative power of machine learning. Based in Sri Lanka, his goal is to build a company that serves clients worldwide with solutions that are both cutting-edge and practical.
               </p>
               <div className="mt-6 flex items-center gap-4">
                 {socialLinks.map((social) => (

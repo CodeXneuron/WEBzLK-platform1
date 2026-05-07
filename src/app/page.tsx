@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Facebook, Linkedin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { industries, howItWorksSteps, whyWEBzPoints } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { AnnouncementBanner } from "@/components/announcement-banner";
+import { SetupForgeSection } from "@/components/setup-forge-section";
+import { Testimonials } from "@/components/testimonials";
+import { FAQ } from "@/components/faq";
+import { FeaturedProjects } from "@/components/featured-projects";
+import { TechnologyShowcase } from "@/components/technology-showcase";
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
@@ -14,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] w-full">
+      <section className="relative min-h-[100svh] w-full flex items-center">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -26,24 +31,63 @@ export default function Home() {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-primary/40" />
-        <div className="relative z-10 flex h-full items-center justify-center text-center text-primary-foreground md:items-end md:pb-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/60 via-violet-600/60 to-purple-800/60" />
+        <div className="relative z-10 flex h-full w-full items-center justify-center text-center text-primary-foreground pt-20 pb-16 md:pb-24 animate-in fade-in slide-in-from-bottom-10 duration-1000 fill-mode-forwards">
           <div className="container mx-auto px-4">
-            <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl text-balance">
-              Engineering AI Solutions for a Smarter Sri Lanka
+            <h1 className="font-headline text-3xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl text-balance drop-shadow-md leading-tight">
+              Engineering AI Solutions for a Smarter World
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-200 md:text-xl text-balance">
-              We leverage AI, ML, and software to solve real-world engineering challenges and drive progress across Sri Lankan industries.
+            <p className="mx-auto mt-6 max-w-3xl text-base text-white/90 sm:text-lg md:text-xl text-balance drop-shadow-sm px-2">
+              We leverage AI, ML, and software to solve real-world engineering challenges and drive progress across industries worldwide.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <div className="mt-8 md:mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 w-full max-w-sm sm:max-w-none mx-auto">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-900/20 border-0 hover:from-blue-500 hover:to-violet-500 transition-all duration-300 hover:scale-105 hover:shadow-blue-900/40 w-full sm:w-auto sm:min-w-[200px] h-12 sm:h-14 text-base sm:text-lg font-medium rounded-full"
+              >
                 <Link href="/contact">
-                  Get a Solution <ArrowRight className="ml-2 h-5 w-5" />
+                  Get a Solution <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10 hover:text-white">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 w-full sm:w-auto sm:min-w-[200px] h-12 sm:h-14 text-base sm:text-lg font-medium rounded-full"
+              >
                 <Link href="/about#founder">Talk to the Founder</Link>
               </Button>
+            </div>
+
+            <div className="mt-8 flex items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200 fill-mode-forwards">
+              <Link
+                href="https://www.facebook.com/profile.php?id=61584679469676"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:bg-blue-600 hover:scale-110 hover:shadow-lg hover:shadow-blue-900/50"
+                aria-label="Visit our Facebook page"
+              >
+                <Facebook className="h-7 w-7 transition-transform duration-300 group-hover:rotate-6" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/webz-lk2025/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:bg-blue-700 hover:scale-110 hover:shadow-lg hover:shadow-blue-900/50"
+                aria-label="Visit our LinkedIn profile"
+              >
+                <Linkedin className="h-6 w-6 transition-transform duration-300 group-hover:-rotate-6" />
+              </Link>
+              <Link
+                href="https://wa.link/4ggfk7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:bg-[#25D366] hover:scale-110 hover:shadow-lg hover:shadow-green-900/50"
+                aria-label="Chat with us on WhatsApp"
+              >
+                <MessageCircle className="h-7 w-7 transition-transform duration-300 group-hover:rotate-6" />
+              </Link>
             </div>
           </div>
         </div>
@@ -51,7 +95,10 @@ export default function Home() {
 
       {/* Announcement Section */}
       <AnnouncementBanner />
-      
+
+      {/* Setup Forge Section */}
+      <SetupForgeSection downloadLink="https://github.com/kosalanayanajithdeshapriya/SetupForge/releases/download/v1.0.0/SetupForge.Setup.1.0.0.exe" />
+
       {/* Why WEBz Section */}
       <section className="py-16 md:py-24 bg-background/95">
         <div className="container mx-auto px-4">
@@ -75,11 +122,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technology Showcase Section */}
+      <TechnologyShowcase />
+
+      {/* Featured Projects Section */}
+      <FeaturedProjects />
+
       {/* Key Industries Section */}
       <section className="py-16 md:py-24 bg-card/95">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">Powering Key Industries in Sri Lanka</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">Powering Key Industries Worldwide</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
               We deliver tailored AI and engineering solutions that address the unique challenges of each sector.
             </p>
@@ -114,10 +167,10 @@ export default function Home() {
             <div className="grid gap-12 md:grid-cols-1">
               {howItWorksSteps.map((step, index) => (
                 <div key={step.step} className={cn("relative flex flex-col items-center md:flex-row md:items-stretch gap-6", index % 2 === 1 && "md:flex-row-reverse")}>
-                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card shadow-md">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card shadow-md">
                     <step.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <div className="hidden md:block absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background" style={{ left: 'calc(50% - 8px)'}} />
+                  <div className="hidden md:block absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background" style={{ left: 'calc(50% - 8px)' }} />
                   <Card className="w-full md:w-1/2">
                     <CardHeader>
                       <CardDescription>Step {step.step}</CardDescription>
@@ -133,6 +186,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
     </div>
   );
 }

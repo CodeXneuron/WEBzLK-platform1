@@ -10,33 +10,49 @@ export async function submitInquiry(
   prevState: ContactFormState,
   formData: FormData
 ): Promise<ContactFormState> {
-  const validatedFields = contactFormSchema.safeParse({
+  const rawData = {
     name: formData.get('name'),
     email: formData.get('email'),
     company: formData.get('company'),
     industry: formData.get('industry'),
     problemDescription: formData.get('problemDescription'),
-  });
+  };
+
+  console.log('Received Form Data:', rawData);
+
+  const validatedFields = contactFormSchema.safeParse(rawData);
 
   if (!validatedFields.success) {
+    console.error('Validation Errors:', validatedFields.error.flatten());
     return {
-      message: 'Invalid form data. Please check your entries.',
+      message: `Invalid form data: ${Object.entries(validatedFields.error.flatten().fieldErrors).map(([key, val]) => `${key}: ${val}`).join(', ')}`,
       status: 'error',
     };
   }
-  
+
   const inquiryData = validatedFields.data;
 
+  let routingResult = { team: 'General Support Team', reason: 'Automated routing unavailable' };
+
   try {
-    const routingResult = await intelligentInquiryRouting(inquiryData);
-    
+    try {
+      routingResult = await intelligentInquiryRouting({
+        ...inquiryData,
+        company: inquiryData.company ?? "Not Provided"
+      });
+      console.log('AI Routing Result:', routingResult);
+    } catch (aiError) {
+      console.warn('AI Routing failed (using fallback):', aiError);
+      // Fallback is already set
+    }
+
     try {
       const { firestore } = initializeFirebase();
       if (!firestore) {
-          throw new Error('Firestore is not initialized');
+        throw new Error('Firestore is not initialized');
       }
-      const db = getFirestore(firestore);
-      await addDoc(collection(db, 'inquiries'), {
+      // firestore is already the instance
+      await addDoc(collection(firestore, 'inquiries'), {
         ...inquiryData,
         routedTo: routingResult.team,
         routingReason: routingResult.reason,
@@ -45,12 +61,11 @@ export async function submitInquiry(
       });
     } catch (firestoreError) {
       console.error("Failed to write to Firestore:", firestoreError);
+      throw new Error('Database write failed'); // Re-throw to trigger the outer catch
     }
-    
-    console.log('AI Routing Result:', routingResult);
 
     return {
-      message: `Thank you, ${inquiryData.name}! Your inquiry has been received and routed to our ${routingResult.team}. We will get back to you shortly.`,
+      message: `Thank you, ${inquiryData.name}! Your inquiry has been received. We will get back to you shortly.`,
       status: 'success',
       data: inquiryData,
     };

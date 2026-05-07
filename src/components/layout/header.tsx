@@ -8,9 +8,10 @@ import { Menu, X } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { navItems } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export function Header() {
   const pathname = usePathname();
@@ -39,7 +40,8 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <ModeToggle />
           <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/contact">Get a Solution</Link>
           </Button>
@@ -52,6 +54,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between border-b pb-4">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
@@ -78,7 +81,11 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-6 space-y-3">
+                  <div className="flex items-center justify-between px-2">
+                    <span className="text-sm font-medium">Theme</span>
+                    <ModeToggle />
+                  </div>
                   <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get a Solution</Link>
                   </Button>

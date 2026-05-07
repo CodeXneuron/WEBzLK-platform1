@@ -3,11 +3,10 @@
 import type { FirebaseOptions } from 'firebase/app';
 
 export const firebaseConfig: FirebaseOptions = {
-  apiKey: 'your-api-key',
-  authDomain: 'your-auth-domain',
-  projectId: 'your-project-id',
-  storageBucket: 'your-storage-bucket',
-  messagingSenderId: 'your-messaging-sender-id',
-  appId: 'your-app-id',
-  measurementId: 'your-measurement-id',
+  apiKey: "AIzaSyA3CpulAWp0selT-nVVAkAJso9-3t3WD9s",
+  authDomain: "studio-8663586124-fff69.firebaseapp.com",
+  projectId: "studio-8663586124-fff69",
+  storageBucket: "studio-8663586124-fff69.firebasestorage.app",
+  messagingSenderId: "185950056248",
+  appId: "1:185950056248:web:b7bd3c900c6e4869375bcd"
 };

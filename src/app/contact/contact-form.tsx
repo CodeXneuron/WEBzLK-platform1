@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-import { useFormState } from "react-dom";
+import { useEffect, useActionState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { submitInquiry } from "./actions";
 import { contactFormSchema } from "./schema";
@@ -34,7 +33,7 @@ type ContactFormInputs = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm({ selectedService }: { selectedService?: string }) {
   const { toast } = useToast();
-  const [state, formAction] = useFormState(submitInquiry, null);
+  const [state, formAction] = useActionState(submitInquiry, null);
 
   const form = useForm<ContactFormInputs>({
     resolver: zodResolver(contactFormSchema),
@@ -64,6 +63,27 @@ export default function ContactForm({ selectedService }: { selectedService?: str
   }, [state, toast, form]);
 
   const { isSubmitting } = form.formState;
+
+  if (state?.status === "success") {
+    return (
+      <div className="flex flex-col items-center justify-center space-y-4 rounded-lg border border-green-200 bg-green-50 p-8 text-center animate-in fade-in zoom-in duration-300">
+        <div className="rounded-full bg-green-100 p-3">
+          <CheckCircle2 className="h-10 w-10 text-green-600" />
+        </div>
+        <h3 className="text-2xl font-bold text-green-800">Inquiry Sent!</h3>
+        <p className="text-green-700 max-w-md mx-auto">
+          {state.message}
+        </p>
+        <Button
+          variant="outline"
+          onClick={() => window.location.reload()}
+          className="mt-4 border-green-200 bg-white text-green-700 hover:bg-green-50 hover:text-green-800"
+        >
+          Send Another Message
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <Form {...form}>
@@ -119,7 +139,7 @@ export default function ContactForm({ selectedService }: { selectedService?: str
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Industry</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select onValueChange={field.onChange} defaultValue={field.value} name={field.name}>
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select your industry" />

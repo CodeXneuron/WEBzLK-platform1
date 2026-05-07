@@ -9,7 +9,13 @@ service cloud.firestore {
 
     // Rules for 'inquiries' collection
     match /inquiries/{inquiryId} {
-      allow create: true; 
+      allow create: if true; 
+      allow read, update, delete: if isSignedIn();
+    }
+
+    // Rules for 'subscribers' collection
+    match /subscribers/{subscriberId} {
+      allow create: if true;
       allow read, update, delete: if isSignedIn();
     }
   }

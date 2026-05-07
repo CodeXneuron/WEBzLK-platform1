@@ -15,9 +15,13 @@ import {
   Cpu,
   BarChart,
   Palette,
-  Goal
+  Goal,
+  Eye,
+  MessageSquare,
+  Cloud,
+  Zap
 } from "lucide-react";
-import type { NavItem, Industry, HowItWorksStep, Value, Service, Project, WhyWEBzPoint } from "./types";
+import type { NavItem, Industry, HowItWorksStep, Value, Service, Project, WhyWEBzPoint, Testimonial, FAQ, Technology } from "./types";
 import { PlaceHolderImages } from "./placeholder-images";
 
 export const navItems: NavItem[] = [
@@ -25,7 +29,7 @@ export const navItems: NavItem[] = [
   { title: "About", href: "/about" },
   { title: "Services", href: "/services" },
   { title: "Projects", href: "/projects" },
-  { title: "Blog", href: "/blog"},
+  { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -38,7 +42,7 @@ export const whyWEBzPoints: WhyWEBzPoint[] = [
   {
     icon: DatabaseZap,
     title: "Data-Driven Decisions",
-    description: "Leveraging your data, we uncover insights that drive efficiency, predictability, and growth for your Sri Lankan business."
+    description: "Leveraging your data, we uncover insights that drive efficiency, predictability, and growth for your business."
   },
   {
     icon: Palette,
@@ -47,8 +51,53 @@ export const whyWEBzPoints: WhyWEBzPoint[] = [
   },
   {
     icon: Goal,
-    title: "Focus on Sri Lanka",
-    description: "We are committed to the local market, understanding its challenges and opportunities to foster national development."
+    title: "Global Reach",
+    description: "We serve clients worldwide, understanding diverse market challenges and opportunities to drive innovation across industries."
+  }
+];
+
+export const technologies: Technology[] = [
+  {
+    icon: BrainCircuit,
+    title: "Artificial Intelligence & Machine Learning",
+    description: "Advanced AI models that learn, adapt, and evolve to solve complex business challenges.",
+    features: ["Deep Learning", "Neural Networks", "Automated Decision Making", "Pattern Recognition"],
+    accentColor: "from-violet-700 to-purple-800"
+  },
+  {
+    icon: Eye,
+    title: "Computer Vision & Image Processing",
+    description: "Intelligent systems that see, understand, and analyze visual data with human-like precision.",
+    features: ["Object Detection", "Quality Inspection", "Facial Recognition", "Real-time Analysis"],
+    accentColor: "from-blue-700 to-cyan-800"
+  },
+  {
+    icon: MessageSquare,
+    title: "Natural Language Processing",
+    description: "Understanding and generating human language to create intelligent conversational experiences.",
+    features: ["Sentiment Analysis", "Text Classification", "Chatbots", "Language Translation"],
+    accentColor: "from-emerald-700 to-teal-800"
+  },
+  {
+    icon: BarChart,
+    title: "Predictive Analytics & Data Science",
+    description: "Transform historical data into actionable insights and accurate future predictions.",
+    features: ["Forecasting Models", "Trend Analysis", "Risk Assessment", "Business Intelligence"],
+    accentColor: "from-orange-700 to-red-800"
+  },
+  {
+    icon: Zap,
+    title: "IoT & Smart Systems",
+    description: "Connected devices and sensors that collect, analyze, and act on real-time data.",
+    features: ["Sensor Integration", "Real-time Monitoring", "Automation", "Edge Computing"],
+    accentColor: "from-amber-700 to-orange-800"
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & Scalable Architecture",
+    description: "Robust, scalable infrastructure that grows with your business needs.",
+    features: ["Microservices", "Auto-scaling", "High Availability", "Serverless Computing"],
+    accentColor: "from-indigo-700 to-blue-800"
   }
 ];
 
@@ -85,7 +134,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
     step: 1,
     icon: Lightbulb,
     title: "Understand Problem",
-    description: "We start by deeply understanding your challenge, holding workshops with your team to grasp the nuances of your operations in Sri Lanka.",
+    description: "We start by deeply understanding your challenge, holding workshops with your team to grasp the nuances of your operations.",
   },
   {
     step: 2,
@@ -121,7 +170,7 @@ export const companyValues: Value[] = [
   {
     icon: Handshake,
     title: "Collaboration",
-    description: "We partner with Sri Lankan businesses, growing together and strengthening our local industries."
+    description: "We partner with businesses worldwide, growing together and strengthening industries through innovation."
   },
   {
     icon: Users,
@@ -135,13 +184,13 @@ export const services: Service[] = [
     title: "AI & Machine Learning Solutions",
     slug: "ai-ml-solutions",
     description: "Custom AI models to automate tasks, generate insights, and create new capabilities.",
-    longDescription: "From natural language processing to computer vision, we develop bespoke AI and Machine Learning models that integrate seamlessly into your business. We help you automate complex processes, gain a competitive edge, and unlock new revenue streams by leveraging the power of intelligent systems tailored for the Sri Lankan market."
+    longDescription: "From natural language processing to computer vision, we develop bespoke AI and Machine Learning models that integrate seamlessly into your business. We help you automate complex processes, gain a competitive edge, and unlock new revenue streams by leveraging the power of intelligent systems tailored for your market."
   },
-{
+  {
     title: "Predictive Analytics for Engineering",
     slug: "predictive-analytics",
     description: "Forecast project outcomes, material needs, and maintenance schedules.",
-    longDescription: "In engineering and construction, foresight is critical. Our predictive analytics services use historical and real-time data to forecast project timelines, budget overruns, resource requirements, and equipment maintenance needs. Make proactive, data-informed decisions to keep your Sri Lankan projects on time and on budget."
+    longDescription: "In engineering and construction, foresight is critical. Our predictive analytics services use historical and real-time data to forecast project timelines, budget overruns, resource requirements, and equipment maintenance needs. Make proactive, data-informed decisions to keep your projects on time and on budget."
   },
   {
     title: "Custom Web & Mobile Applications",
@@ -158,18 +207,30 @@ export const services: Service[] = [
   {
     title: "Data Dashboards and Reporting",
     slug: "data-dashboards",
-description: "Visualize your key metrics in real-time with interactive dashboards.",
+    description: "Visualize your key metrics in real-time with interactive dashboards.",
     longDescription: "Turn raw data into actionable intelligence. We build custom, real-time dashboards and reporting systems that give you a clear view of your operations. Track KPIs, monitor performance, and share insights across your organization with intuitive and powerful data visualization tools."
+  },
+  {
+    title: "UI/UX Design",
+    slug: "ui-ux-design",
+    description: "Crafting intuitive and visually stunning user experiences for web and mobile.",
+    longDescription: "We believe that powerful technology should be easy to use. Our UI/UX design process focuses on understanding your users' needs and behaviors to create interfaces that are not only beautiful but also intuitive, accessible, and optimized for engagement and conversion."
+  },
+  {
+    title: "Data Engineering & Pipeline Architecture",
+    slug: "data-engineering",
+    description: "Robust data handling solutions to collect, process, and store your valuable information.",
+    longDescription: "Data is the lifeblood of modern business. We design and build scalable data pipelines, data warehouses, and ETL processes that ensure your data is clean, accessible, and ready for analysis. From real-time streaming to batch processing, we handle your data with the care it deserves."
   }
 ];
 
 export const projects: Project[] = [
   {
-    name: "Smart Irrigation for Tea Plantations",
+    name: "IoT-Based Smart Irrigation Systems",
     industry: "Agriculture",
-    problem: "Tea estates in the central highlands faced unpredictable rainfall, leading to inefficient water usage and inconsistent crop yields.",
-    solution: "Developed an IoT and AI-powered system with soil moisture sensors and weather-predictive analytics to automate irrigation cycles.",
-    impact: "Reduced water consumption by 30% and increased average yield by 15%, ensuring a more stable income for local growers.",
+    problem: "Unpredictable rainfall and inefficient water usage often lead to inconsistent crop yields and resource wastage.",
+    solution: "We can build IoT/AI-powered systems with soil sensors and weather analytics to automate irrigation cycles efficiently.",
+    impact: "Potential to reduce water consumption by up to 30% and significantly increase crop yield stability.",
     image: {
       id: "project-smart-irrigation",
       url: PlaceHolderImages.find(p => p.id === "project-smart-irrigation")?.imageUrl || "",
@@ -177,11 +238,11 @@ export const projects: Project[] = [
     }
   },
   {
-    name: "AI-Powered Cost Analytics for Colombo Port City",
+    name: "Predictive Cost Analytics",
     industry: "Construction",
-    problem: "A major contractor for the Port City project needed more accurate cost and timeline predictions for large-scale infrastructure.",
-    solution: "We built a predictive analytics model using historical project data to forecast material costs and identify potential delays.",
-    impact: "Improved budget accuracy by over 20% and enabled proactive risk management, saving millions of rupees.",
+    problem: "Large-scale infrastructure projects often face budget overruns due to inaccurate cost forecasting and unforeseen delays.",
+    solution: "We develop predictive models using historical data to forecast material costs and identify potential timeline risks.",
+    impact: "Can improve budget accuracy significantly and enable proactive risk management for better financial control.",
     image: {
       id: "project-construction-analytics",
       url: PlaceHolderImages.find(p => p.id === "project-construction-analytics")?.imageUrl || "",
@@ -189,11 +250,11 @@ export const projects: Project[] = [
     }
   },
   {
-    name: "Quality Control Automation for Apparel Factories",
+    name: "Automated Quality Control Systems",
     industry: "Manufacturing",
-    problem: "Sri Lanka's leading apparel exporters struggled with manual, time-consuming quality checks, leading to human error and defects.",
-    solution: "Implemented a machine vision system on production lines to automatically detect fabric defects and stitching errors in real-time.",
-    impact: "Increased defect detection rate by 95%, reduced return rates, and solidified Sri Lanka's reputation for high-quality garment manufacturing.",
+    problem: "Manual quality checks are time-consuming and prone to human error, affecting final product consistency.",
+    solution: "We implement machine vision systems that automatically detect defects and stitching errors in real-time.",
+    impact: "Capable of increasing defect detection rates to over 95%, ensuring high-quality output and reducing returns.",
     image: {
       id: "project-factory-automation",
       url: PlaceHolderImages.find(p => p.id === "project-factory-automation")?.imageUrl || "",
@@ -201,15 +262,41 @@ export const projects: Project[] = [
     }
   },
   {
-    name: "Personalized Tutoring Platform for A-Level Students",
+    name: "Adaptive Learning Platforms",
     industry: "Education",
-    problem: "Students across Sri Lanka needed more tailored support for competitive A-Level exams, as group tuition couldn't address individual weaknesses.",
-    solution: "Created an adaptive e-learning platform that uses AI to identify a student's weak subjects and generates a personalized study plan with targeted resources.",
-    impact: "Users reported a 25% average improvement in test scores, providing a more equitable and effective learning tool for students nationwide.",
+    problem: "Standardized teaching often fails to address individual student weaknesses, particularly in competitive exams.",
+    solution: "We create adaptive e-learning platforms that use AI to identify weak subjects and generate personalized study plans.",
+    impact: "Provides a more effective, personalized learning experience that adapts to each student's pace.",
     image: {
       id: "project-education-platform",
       url: PlaceHolderImages.find(p => p.id === "project-education-platform")?.imageUrl || "",
       hint: PlaceHolderImages.find(p => p.id === "project-education-platform")?.imageHint || ""
     }
+  }
+];
+
+// Testimonials removed as company is new.
+export const testimonials: Testimonial[] = [];
+
+export const faqs: FAQ[] = [
+  {
+    question: "What industries do you specialize in?",
+    answer: "We primarily focus on Construction, Agriculture, Manufacturing, Education, and Healthcare, but our engineering-first approach allows us to tackle complex problems in any sector."
+  },
+  {
+    question: "Do you offer ongoing support after the project is finished?",
+    answer: "Yes, absolutely. We believe in long-term partnerships. We offer various support and maintenance packages to ensure your solution continues to operate at peak performance."
+  },
+  {
+    question: "How long does a typical project take?",
+    answer: "Project timelines vary depending on complexity. A simple web app might take 4-8 weeks, while a complex AI implementation could take 3-6 months. We provide detailed timelines during the initial consultation."
+  },
+  {
+    question: "Can you work with our existing data?",
+    answer: "Yes! One of our core strengths is analyzing and leveraging your existing data to uncover insights and build predictive models."
+  },
+  {
+    question: "Where is your team located?",
+    answer: "We are proudly based in Sri Lanka, with our main engineering center in Monaragala. We understand the local market context better than anyone."
   }
 ];
